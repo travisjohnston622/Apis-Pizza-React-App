@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class TypePage extends Component {
 	render() {
@@ -9,4 +10,4 @@ class TypePage extends Component {
 		);
 	}
 }
-export default TypePage;
+export default connect()(TypePage);

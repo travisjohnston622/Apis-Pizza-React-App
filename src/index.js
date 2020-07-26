@@ -1,17 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './Components/App/App';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { provider } from 'react-redux';
+import logger from 'redux-logger';
+//string
+const typeReducer = (state = 'delivery', action) => {
+	if (action.type === 'SET_ORDER_TYPE') {
+		return action.payload;
+	}
+	return state;
+};
+//object
+const customerReducer = (store) => { };
+//array
+const pizzaReducer = (store) => { };
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+const storeInstance = createStore(
+	combineReducers({
+		typeReducer,
+	}),
+	applyMiddleware(logger)
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(
+	<provider store={storeInstance}>
+		<App />
+	</provider>,
+	document.getElementById('root'),
+);
