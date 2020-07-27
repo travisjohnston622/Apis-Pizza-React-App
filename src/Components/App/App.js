@@ -12,9 +12,9 @@ class App extends Component {
 				<h1>Apis Pizza</h1>
 				<Router>
 					<Route exact path='/' component={TypePage} />
-					<Route exact path='/Customer' component={CustomerPage} />
-					<Router exact path='/Pizza' component={PizzaPage} />
-					<Router exact path='/Summary' component={SummaryPage} />
+					<Route exact path='/customer' component={CustomerPage} />
+					<Router exact path='/pizza' component={PizzaPage} />
+					<Router exact path='/summary' component={SummaryPage} />
 				</Router>
 			</div>
 		);

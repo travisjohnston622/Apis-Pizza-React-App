@@ -28,7 +28,7 @@ const customerReducer = (state = {}, action) => {
 };
 //array
 const pizzaReducer = (state = [], action) => {
-	if (action.type === 'ADD_PIZZA') {
+	if (action.type === 'SET_PIZZA') {
 		return [...state, action.payload];
 	}
 	return state;
