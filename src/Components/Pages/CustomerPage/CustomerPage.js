@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 class CustomerPage extends Component {
 	state = {
-		firstName: "",
-		lastName: "",
-		address: "",
-	}
+		firstName: '',
+		lastName: '',
+		address: '',
+	};
 
 	onInputChange = (input) => (event) => {
 		this.setState({
@@ -15,7 +15,7 @@ class CustomerPage extends Component {
 	};
 
 	onNextClick = (event) => {
-		this.props.dispatch({ type: "SET_CUSTOMER_TYPE", payload: this.state });
+		this.props.dispatch({ type: "SET_CUSTOMER_INFO", payload: this.state });
 		this.props.history.push('/pizza');
 	};
 
